@@ -1,0 +1,50 @@
+proper
+upper
+=CHOOSE(F2,"Speedy Express","Fedex","United Package")
+=TEXT(C2,"MMM")
+
+for practice 
+delete j - n on order name sheet
+
+Advanced Filter
+* table design -filter option off
+* data-filter-advanced (criteria : criteria header + criteria ) ex) b2:b3 (two rows)
+* use macro to record the advanced filter process
+* data - filter - clear 
+* subtotal - max to figure out the latest order
+
+-----------------------------------------------------------
+Pivot table
+
+* pivot table analyze - pivot chart
+* hide all field buttons on chart
+* design > move chart
+
+Slicer
+* analyze > insert slicer
+* options
+
+
+Setting
+right click chart ->format chart area -> move -> don't size 
+view -> remove formular bar /gridlines/headings checkbox
+double click the tab (ex.view) to collapse the ribbon => double click to get back to the ribborn
+
+
+Macro 
+* clear the filter
+* home > find& select > selection pane .)
+* edit vba code
+
+Protect dashboard
+* select filter cell => 
+home -> alignment =|| click > protection tab > uncheck locked 
+* review ->protect sheet 
+check select unlocked cells & edit object
+*passwd
+
+
+Powerquery review reference
+https://www.youtube.com/watch?v=7Vn6uOxcAc0&list=PLHYaVuyjhcqyYD7qss7lsFVBLf8B_zZrx
+https://www.youtube.com/watch?v=ohGFPF12Qwc
+https://www.youtube.com/watch?v=K74_FNnlIF8

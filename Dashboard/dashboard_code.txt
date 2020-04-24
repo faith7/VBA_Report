@@ -1,0 +1,72 @@
+Option Explicit
+Private Sub Worksheet_Change(ByVal Target As Range)
+
+'On Error GoTo NoData:
+
+If Target.Address = "$B$3" Then
+   
+    custFilter
+    pivotFilter
+    
+End If
+
+Noerror:
+    Exit Sub
+
+NoData:
+    MsgBox " There's no customer data. Please change the date on $B$3 again"
+
+End Sub
+
+--------------------------------------------------------------------------------
+
+Option Explicit
+
+Sub custFilter()
+'
+' Macro1 Macro
+
+    Range("Order_History[#All]").AdvancedFilter Action:=xlFilterInPlace, _
+        CriteriaRange:=Range("'Customer Dashboard'!Criteria"), Unique:=False
+End Sub
+
+Sub pivotFilter()
+Dim pt As PivotTable
+Dim fld As PivotField
+Dim cust As String
+
+On Error GoTo NoData:
+
+ActiveWorkbook.SlicerCaches("Slicer_OrderMonth").ClearManualFilter
+ActiveSheet.Shapes.Range(Array("OrderMonth")).Visible = True
+ActiveSheet.Shapes.Range(Array("Chart 1")).Visible = True
+
+
+Set pt = Worksheets("Customer Pivot").PivotTables("custPivot")
+Set fld = pt.PivotFields("Customer Name")
+cust = Worksheets("Customer Dashboard").Range("B3").Value
+
+On Error GoTo NoData:
+
+With pt
+    fld.ClearAllFilters
+    fld.CurrentPage = cust
+    .RefreshTable
+End With
+
+Done:
+    Exit Sub
+
+NoData:
+    ActiveSheet.Shapes.Range(Array("OrderMonth")).Visible = False
+    ActiveSheet.Shapes.Range(Array("Chart 1")).Visible = False
+    MsgBox "There's no filtered data." & vbCrLf & _
+    "Please Select a new value on $B$3."
+    
+   
+End Sub
+
+
+
+
+

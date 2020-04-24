@@ -1,0 +1,1 @@
+This is my summary and practice (with little code revision) to Udemy VBA course from Kyle Pew.

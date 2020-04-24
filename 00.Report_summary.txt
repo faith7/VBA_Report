@@ -1,0 +1,21 @@
+1) Header
+
+- Insert Header
+  Region Expense Jan Feb Mar Total
+
+- Format Header 
+  bold/blue/white
+
+- Loop through the worksheets
+
+2) AutoSum
+- AutoSum data
+
+3) Final Report
+- Copy & Paste Data with VBA
+
+
+4) Working with VBA form
+- combo box for the name of sheets
+- add sheets button 
+- run report (header, autosum , copy & paste) 
